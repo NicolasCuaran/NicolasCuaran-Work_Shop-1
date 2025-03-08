@@ -1,40 +1,38 @@
-# Instrucciones de configuración del Repositorio
+# Repository Setup Instructions
 
-Este repositorio contiene Notebooks en Jupyter para analizar, limpiar y visualizar datos de candidatos a partir del archivo `Candidates.csv`. Sigue los pasos descritos a continuación para configurar correctamente el entorno de trabajo.
+This repository contains Jupyter Notebooks for analyzing, cleaning, and visualizing candidate data from the `Candidates.csv` file. Follow the steps below to correctly set up your working environment.
 
-## 1. Clonar el repositorio
+## 1. Clone the Repository
 
-Abre una terminal y ejecuta el siguiente comando:
+Open a terminal and run the following command:
 
 ```bash
-gh repo clone NicolasCuaran/NicolasCuaran-Work_Shop-1
+git clone <repository-url>
 ```
 
-Reemplaza `<url-del-repositorio>` con la dirección URL proporcionada del repositorio en GitHub.
+## 2. Prepare Essential Files
 
-## 2. Preparar archivos esenciales
+### Data File
 
-### Archivo de datos
+Make sure you have the `Candidates.csv` file placed in the project's root folder.
 
-Debes contar con el archivo `Candidates.csv` ubicado en la carpeta raíz del proyecto.
+### `.env` File
 
-### Archivo `.env`
-
-Crea un archivo llamado `.env` en la raíz del proyecto con el siguiente formato:
+Create a file named `.env` in the project's root folder with the following format:
 
 ```env
-PG_USER=usuario
-PG_PASSWORD=contraseña
+PG_USER=username
+PG_PASSWORD=password
 PG_HOST=host
-PG_PORT=puerto
-PG_DATABASE=nombre_base_de_datos
+PG_PORT=port
+PG_DATABASE=database_name
 ```
 
-Reemplaza los valores con las credenciales específicas de tu base de datos PostgreSQL.
+Replace the placeholders with your specific PostgreSQL database credentials.
 
-## 3. Configuración del entorno Python
+## 3. Python Environment Setup
 
-Asegúrate de tener instalado Python en tu sistema. Luego, configura un entorno virtual ejecutando:
+Ensure Python is installed on your system, then set up a virtual environment by executing:
 
 ```bash
 python -m venv venv
@@ -42,25 +40,24 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Esto instalará las dependencias necesarias especificadas en `requirements.txt`.
+This installs all necessary dependencies listed in `requirements.txt`.
 
-## 4. Ejecución de los Notebooks
+## 4. Running the Notebooks
 
-Abre Jupyter Notebook ejecutando:
+Launch Jupyter Notebook by running:
 
 ```bash
 jupyter notebook
 ```
 
-Luego sigue el orden detallado a continuación:
+Follow the detailed execution order below:
 
-1. **000_TraslateScript.ipynb**: Ejecuta este notebook paso a paso como está descrito en el archivo. Este script es esencial para preparar los datos para los análisis posteriores.
+1. **000_TraslateScript.ipynb**: Run this notebook step by step as described within the file. This script is essential for preparing your data for further analysis.
 
-2. **001_EDA_Candidates.ipynb**: Realiza el análisis exploratorio de datos para entender mejor las características y estructura de la información.
+2. **001_EDA_Candidates.ipynb**: Conduct exploratory data analysis to better understand the characteristics and structure of your data.
 
-3. **002_HiredCandidates.ipynb**: Finalmente, ejecuta este notebook para limpiar los datos y crear la tabla `HiredCandidates` en la base de datos con la información procesada y lista para visualizaciones.
+3. **002_HiredCandidates.ipynb**: Finally, run this notebook to clean your data and create the `HiredCandidates` table in your database, preparing the data for visualization.
 
-## 5. Visualización de resultados
+## 5. Data Visualization
 
-Una vez generada la tabla en tu base de datos, puedes usar herramientas de visualización como **Power BI** para crear dashboards interactivos y obtener insights claros de los datos procesados.
-
+After creating the database table, you can use visualization tools like **Power BI** to create interactive dashboards and gain clear insights from the processed data.
